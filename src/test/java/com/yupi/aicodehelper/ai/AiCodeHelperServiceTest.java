@@ -32,4 +32,10 @@ class AiCodeHelperServiceTest {
         AiCodeHelperService.Report report = aiCodeHelperService.chatForReport(userMassage);
         System.out.println(report);
     }
+
+    @Test
+    void chatWithRag() {
+        String result = aiCodeHelperService.chat("怎么备考 408？有哪些推荐的院校？");
+        System.out.println(result);
+    }
 }
