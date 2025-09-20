@@ -25,4 +25,11 @@ class AiCodeHelperServiceTest {
         result = aiCodeHelperService.chat("猜猜我是谁？");
         System.out.println(result);
     }
+
+    @Test
+    void chatForReport() {
+        String userMassage = "你好，我是 Octaver，今年大三，请帮我定制福州大学 085404 上岸计划";
+        AiCodeHelperService.Report report = aiCodeHelperService.chatForReport(userMassage);
+        System.out.println(report);
+    }
 }
