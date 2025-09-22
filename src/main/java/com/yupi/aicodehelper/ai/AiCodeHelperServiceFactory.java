@@ -1,5 +1,6 @@
 package com.yupi.aicodehelper.ai;
 
+import com.yupi.aicodehelper.ai.tools.InterviewQuestionTool;
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatModel;
@@ -32,6 +33,8 @@ public class AiCodeHelperServiceFactory {
 //                .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(10))
                 // RAG 内容检索生成
                 .contentRetriever(contentRetriever)
+                // 工具调用
+                .tools(new InterviewQuestionTool())
                 .build();
         return aiCodeHelperService;
     }

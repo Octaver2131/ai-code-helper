@@ -1,5 +1,6 @@
 package com.yupi.aicodehelper.ai;
 
+import dev.langchain4j.service.Result;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,7 +36,14 @@ class AiCodeHelperServiceTest {
 
     @Test
     void chatWithRag() {
-        String result = aiCodeHelperService.chat("怎么备考 408？有哪些推荐的院校？");
+        Result<String> result = aiCodeHelperService.chatWithRag("怎么备考 408？有哪些推荐的院校？");
+        System.out.println(result.sources());
+        System.out.println(result.content());
+    }
+
+    @Test
+    void chatWithTools() {
+        String result = aiCodeHelperService.chat("有哪些常见的 spring 面试题？");
         System.out.println(result);
     }
 }
