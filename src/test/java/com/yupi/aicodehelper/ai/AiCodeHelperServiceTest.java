@@ -46,4 +46,10 @@ class AiCodeHelperServiceTest {
         String result = aiCodeHelperService.chat("有哪些常见的 spring 面试题？");
         System.out.println(result);
     }
+
+    @Test
+    void chatWithMCP() {
+        String result = aiCodeHelperService.chat("今天的 B 站每周必看有哪些？");
+        System.out.println(result);
+    }
 }
