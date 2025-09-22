@@ -1,6 +1,7 @@
 package com.yupi.aicodehelper.ai;
 
 import dev.langchain4j.service.MemoryId;
+import dev.langchain4j.service.Result;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.spring.AiService;
 
@@ -18,4 +19,8 @@ public interface AiCodeHelperService {
     Report chatForReport(String userMessage);
 
     record Report(String name, List<String> suggestionList){}
+
+    // 返回封装后的结果
+    @SystemMessage(fromResource = "system-prompt.txt")
+    Result<String> chatWithRag(String userMessage);
 }
