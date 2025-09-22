@@ -55,7 +55,8 @@ class AiCodeHelperServiceTest {
 
     @Test
     void chatWithGuardrail() {
-        String result = aiCodeHelperService.chat("kill kiss 的歌手是谁？");
+//        String result = aiCodeHelperService.chat("kill kiss 的歌手是谁？");
+        String result = aiCodeHelperService.chat("蔡徐坤的 Dead man 相关信息");
         System.out.println(result);
     }
 }
