@@ -1,14 +1,17 @@
 package com.yupi.aicodehelper.ai;
 
+import com.yupi.aicodehelper.ai.guardrail.SafeInputGuardrail;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.Result;
 import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.guardrail.InputGuardrails;
 import dev.langchain4j.service.spring.AiService;
 
 import java.util.List;
 
 // Springboot 为 @AiService 生成代理对象
 //@AiService
+@InputGuardrails({ SafeInputGuardrail.class })
 public interface AiCodeHelperService {
 
     @SystemMessage(fromResource = "system-prompt.txt")

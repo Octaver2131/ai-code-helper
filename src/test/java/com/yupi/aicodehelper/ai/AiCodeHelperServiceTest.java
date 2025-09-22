@@ -52,4 +52,10 @@ class AiCodeHelperServiceTest {
         String result = aiCodeHelperService.chat("今天的 B 站每周必看有哪些？");
         System.out.println(result);
     }
+
+    @Test
+    void chatWithGuardrail() {
+        String result = aiCodeHelperService.chat("kill kiss 的歌手是谁？");
+        System.out.println(result);
+    }
 }
